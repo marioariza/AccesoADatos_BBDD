@@ -29,10 +29,11 @@
 
     ?>
     
-    <form action="003editando.php?=<?php $id ?>" method="get" class="formulario3">
+    <form action="003editando.php" method="post" class="formulario3">
         <div class="mb-3 w-25">
+            <input type="number" name="id" value="<?=$id?>" hidden>
             <label for="champ" class="form-label"><b>Campeón:</b></label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="champ" value="<?php echo $name ?>">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="champ" value="<?=$name?>">
         </div>
         <div class="mb-3 w-50">
             <p><b>Rol:</b></p>
@@ -50,8 +51,8 @@
             <p><input class="form-check-input" type="radio" name="diff[]" id="diff" value="Alta" <?php if($diff=='Alta'){echo "checked=checked";}?> id="flexCheckDefault">Alta</p>
         </div>
         <div class="mb-3 w-75">
-            <label for="champ" class="form-label"><b>Descripción:</b></label>
-            <input type="text-area" class="form-control" id="exampleFormControlInput1" name="champ" value="<?php echo $des ?>">
+            <label for="des" class="form-label"><b>Descripción:</b></label>
+            <input type="text-area" class="form-control" id="exampleFormControlInput1" name="des" value="<?=$des?>">
         </div>
         <div class="mb-3 w-25">
             <button type="submit" class="btn btn-primary">Enviar datos</button>
