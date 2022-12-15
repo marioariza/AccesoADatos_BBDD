@@ -16,10 +16,6 @@ if(mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();
 } else {
-    echo "<h1>Datos actualizados correctamente !!!</h1><br><br>";
-    echo "<button><a class='btn' href='002campeones.php'>Ver resumen</a></button>";
-}
-
     $id = $_POST['id'];
     $nombre = $_POST['champ'];
     $roles = $_POST['rol'];
@@ -40,6 +36,9 @@ if(mysqli_connect_errno()) {
     SET `name`='$nombre' ,rol='$rol', difficulty='$diff', `description`='$desc'
     WHERE id = $id";
     $actualizarChamp = mysqli_query($conexion, $consulta);
+    echo "<h1>Datos actualizados correctamente !!!</h1><br><br>";
+    echo "<a class='btn btn-primary' href='002campeones.php'>Ver resumen</a>";
+}
 
 ?>
 </body>
