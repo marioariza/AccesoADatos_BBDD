@@ -17,7 +17,7 @@ if(mysqli_connect_errno()) {
     exit();
 } else {
     echo "<h1>Datos actualizados correctamente !!!</h1><br><br>";
-    echo "<button><a href='002campeones.php'>Ver resumen</a></button>";
+    echo "<button><a class='btn' href='002campeones.php'>Ver resumen</a></button>";
 }
 
     $id = $_POST['id'];
