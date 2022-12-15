@@ -19,21 +19,17 @@
     }
 
     $id = $_GET['id'];
-
-
-
     $consulta = "SELECT * FROM `champ` WHERE id = $id";
     $listaChamp = mysqli_query($conexion, $consulta);
     $row = mysqli_fetch_assoc($listaChamp);
     $name = $row["name"];
     $rol = $row["rol"];
-
     $diff = $row["difficulty"];
     $des = $row["description"];
 
     ?>
     
-    <form action="003editando.php" method="post" class="formulario3">
+    <form action="003editando.php?=<?php $id ?>" method="get" class="formulario3">
         <div class="mb-3 w-25">
             <label for="champ" class="form-label"><b>Campeón:</b></label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="champ" value="<?php echo $name ?>">
@@ -52,6 +48,10 @@
             <p><input class="form-check-input" type="radio" name="diff[]" id="diff" value="Baja" <?php if($diff=='Baja'){echo "checked=checked";}?> id="flexCheckDefault">Baja</p>
             <p><input class="form-check-input" type="radio" name="diff[]" id="diff" value="Moderada" <?php if($diff=='Moderada'){echo "checked=checked";}?> id="flexCheckDefault">Moderada</p>
             <p><input class="form-check-input" type="radio" name="diff[]" id="diff" value="Alta" <?php if($diff=='Alta'){echo "checked=checked";}?> id="flexCheckDefault">Alta</p>
+        </div>
+        <div class="mb-3 w-75">
+            <label for="champ" class="form-label"><b>Descripción:</b></label>
+            <input type="text-area" class="form-control" id="exampleFormControlInput1" name="champ" value="<?php echo $des ?>">
         </div>
         <div class="mb-3 w-25">
             <button type="submit" class="btn btn-primary">Enviar datos</button>

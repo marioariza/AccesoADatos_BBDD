@@ -8,9 +8,9 @@ if(mysqli_connect_errno()) {
 }
 
     $id = $_GET['id'];
-    $nombre = $_GET['champ'];
-    $roles = $_GET['rol'];
-    $dificultades = $_GET['diff'];
+    $nombre = $_POST['champ'];
+    $roles = $_POST['rol'];
+    $dificultades = $_POST['diff'];
     $rol = '';
     $diff = '';
 
