@@ -38,7 +38,7 @@ if ($listaChamp) {
                     </div>
                     <div class='modal-footer'>
                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
-                        <a type='button' class='btn btn-primary' href='003borrar.php?=$champs[id]'>Borrar</a>
+                        <a type='button' class='btn btn-primary' href='003borrar.php?id=$champs[id]'>Borrar</a>
                     </div>
                 </div>
             </div>
