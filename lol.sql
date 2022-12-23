@@ -15,3 +15,15 @@ INSERT INTO champ VALUES(0,'Amumu','Tank','Baja','Cuenta la leyenda que Amumu es
 INSERT INTO champ VALUES(0,'Gangplank','Fighter','Alta','Tan impredecible como brutal, el destronado rey de los piratas conocido como Gangplank es temido a lo largo y ancho del mundo. Antes gobernaba la ciudad portuaria de Aguas Estancadas, y aunque su reinado haya terminado, hay quienes creen que esto solo lo ha hecho más peligroso. Gangplank preferiría ver Aguas Estancadas bañada en sangre una vez más antes de dejar que alguien más la tomase. Ahora con pistola, machete y barriles de pólvora, está decidido a reclamar lo que ha perdido.');
 INSERT INTO champ VALUES(0,'Karma','Mage','Moderada','No hay mortal que ejemplifique las tradiciones espirituales de Jonia mejor que Karma. Es la personificación de un alma antigua reencarnada un sinfín de veces, que acumula los recuerdos de las vidas pasadas a la nueva y que ha sido bendecida con un poder que pocos pueden comprender. Ha hecho lo que estaba en su mano para guiar a su pueblo en los recientes tiempos de crisis, pero sabe que la paz y la armonía solo se alcanzarán pagando un alto precio, tanto para ella como para la tierra que más aprecia.');
 INSERT INTO champ VALUES(0,'Ivern','Support','Moderada','Ivern Bósquez, conocido por muchos como el Padre Arborescente, es un ser peculiar, mitad humano y mitad árbol, que deambula por los bosques de Runaterra y cultiva la vida allá donde va. Conoce los secretos del mundo natural y es buen amigo de todo lo que crece, vuela o se refugia en él. Ivern comparte su curiosa sabiduría con todo aquel con el que se encuentra, rejuvenece los bosques y, de vez en cuando, confía sus secretos a mariposas indiscretas.');
+
+CREATE TABLE `user` (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(100) NOT NULL,
+username VARCHAR(15) NOT NULL,
+`password` TEXT NOT NULL,
+email VARCHAR(30) NOT NULL
+);
+
+INSERT INTO `user` VALUES(0,'Mario Rufo Ariza','maario_lol',AES_ENCRYPT('mario_betis'),'mario@practicabbdd.com');
+INSERT INTO `user` VALUES(0,'Manuel Moya Vadillo','mmoyalol2003',AES_ENCRYPT('manuel_madrid'),'manuel@practicabbdd.com');
+INSERT INTO `user` VALUES(0,'Javier Antequera Gaspar','javi_lol_ant',AES_ENCRYPT('javier_sevilla'),'javier@practicabbdd.com');

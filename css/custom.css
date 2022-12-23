@@ -1,3 +1,8 @@
-.botonc {
-    color: red;
+@font-face {
+    font-family: 'LOL';
+    src: url(../font/letra_lol.ttf);
+}
+
+form {
+    font-family: 'LOL';
 }
