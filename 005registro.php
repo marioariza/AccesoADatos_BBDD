@@ -32,7 +32,8 @@
                 </svg>
             </button>
             <p>La contraseña debe tener al menos 5 carácteres y un máximo de 15 carácteres.</p>
-            <br>
+            <label for="mail" class="form-label"><b>Email:</b></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="Email..." size="30" required>
         </div>
         <div class="mb-3 w-25">
             <button type="submit" class="btn btn-primary">Enviar datos</button>
