@@ -20,10 +20,10 @@ CREATE TABLE `user` (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 `name` VARCHAR(100) NOT NULL,
 username VARCHAR(15) NOT NULL,
-`password` TEXT NOT NULL,
+`password` VARCHAR(15) NOT NULL,
 email VARCHAR(30) NOT NULL
 );
 
-INSERT INTO `user` VALUES(0,'Mario Rufo Ariza','maario_lol',AES_ENCRYPT('mario_betis'),'mario@practicabbdd.com');
-INSERT INTO `user` VALUES(0,'Manuel Moya Vadillo','mmoyalol2003',AES_ENCRYPT('manuel_madrid'),'manuel@practicabbdd.com');
-INSERT INTO `user` VALUES(0,'Javier Antequera Gaspar','javi_lol_ant',AES_ENCRYPT('javier_sevilla'),'javier@practicabbdd.com');
+INSERT INTO `user` VALUES(0,'Mario Rufo Ariza','maario_lol',AES_ENCRYPT('mario_betis','llave'),'mario@practicabbdd.com');
+INSERT INTO `user` VALUES(0,'Manuel Moya Vadillo','mmoyalol2003',AES_ENCRYPT('manuel_madrid','llave'),'manuel@practicabbdd.com');
+INSERT INTO `user` VALUES(0,'Javier Antequera Gaspar','javi_lol_ant',AES_ENCRYPT('javier_sevilla','llave'),'javier@practicabbdd.com');
