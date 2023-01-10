@@ -23,16 +23,3 @@ username VARCHAR(15) NOT NULL,
 `password` BLOB NOT NULL,
 email VARCHAR(30) NOT NULL
 );
-
-/* El algoritmo AES es el más completo y complejo, tiene posibilidad de revertirse y se utiliza con una 
-llave privada, es decir, debemos proporcionar dicha llave para encriptar y desencriptar las contraseñas. */
-
-INSERT INTO `user` VALUES(0,'Mario Rufo Ariza','maario_lol',AES_ENCRYPT('mario_betis','llave'),'mario@practicabbdd.com');
-INSERT INTO `user` VALUES(0,'Manuel Moya Vadillo','mmoyalol2003',AES_ENCRYPT('manuel_madrid','llave'),'manuel@practicabbdd.com');
-INSERT INTO `user` VALUES(0,'Javier Antequera Gaspar','javi_lol_ant',AES_ENCRYPT('javier_sevilla','llave'),'javier@practicabbdd.com');
-
-/* Para desencriptar y mostrar la contraseña deberíamos utilizar CONVERT(AES_DECRYPT(password,'mi_llave') USING UTF8) FROM user; 
-
-Con esto conseguimos convertir (CONVERT) y desencriptar (AES_DECRYPT) nuestra contraseña a codificación de carácteres (UTF-8)*/
-
-SELECT username, convert(aes_decrypt(password,'llave')using utf8) as password FROM user;
