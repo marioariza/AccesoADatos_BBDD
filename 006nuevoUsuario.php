@@ -26,7 +26,7 @@
     $pass = $_POST['password'];
     $email = $_POST['mail'];
 
-    $consulta = "INSERT INTO `user` VALUES (0,'$id','$name','$user','$pass','$email')";
+    $consulta = "INSERT INTO `user` VALUES ($id,'$name','$user','$pass','$email')";
     $listaChamp = mysqli_query($conexion, $consulta);       
 
     ?>
