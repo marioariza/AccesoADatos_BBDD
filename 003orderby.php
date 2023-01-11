@@ -128,7 +128,11 @@ if ($listaChamp) {
     }
 
     echo "</tbody>
-    </table>";
+    </table><br>
+    
+    <div class='mb-3 w-100 d-flex justify-content-center'>
+        <a href='003campeones.php' class='btn btn-primary'>Restaurar orden</a>
+    </div>";
 }
 
 ?>

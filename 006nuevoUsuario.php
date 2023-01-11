@@ -17,11 +17,6 @@
 
     try {
         $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    } 
-
-    try {
     
         $id = $_POST['id'];
         $name = $_POST['name'];
