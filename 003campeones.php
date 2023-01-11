@@ -96,7 +96,7 @@ if ($listaChamp) {
                     <td>$champs[name]</td>
                     <td>$champs[rol]</td>
                     <td>$champs[difficulty]</td>
-                    <td>
+                    <td>". substr($champs['description'], 0 ,20) ." ... 
                     <a class='btn btn-primary boton' data-bs-toggle='modal' data-bs-target='#exampleModal$champs[id]'>Leer descripción</a>
                     </td>
             </tr>
