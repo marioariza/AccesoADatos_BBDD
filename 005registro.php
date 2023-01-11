@@ -13,36 +13,10 @@
 
     <?php
 
-    $error = $_GET["error"];
+    $error = $_GET["error"] ?? "";
 
-    if ($error == "user") {
-        echo "<div class='modal' tabindex='-1'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title'>ERROR</h5>
-              <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-            </div>
-            <div class='modal-body'>
-              <p>¡Este nombre de usuario ya esta en uso!</p>
-            </div>
-          </div>
-        </div>
-      </div>";
-    } else if ($error == "email") {
-        echo "<div class='modal' tabindex='-1'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title'>ERROR</h5>
-              <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-            </div>
-            <div class='modal-body'>
-              <p>¡Este nombre de usuario ya esta en uso!</p>
-            </div>
-          </div>
-        </div>
-      </div>";
+    if ($error == "user" || $error == "email") {
+        echo '<div class="alert alert-danger" role="alert">¡Este ' . $error . ' ya esta en uso! Cambialo y vuelve a intentarlo.</div>';
     }
 
     ?>
@@ -53,7 +27,6 @@
     <div class="formulario d-flex justify-content-center">
         <form action="006nuevoUsuario.php" method="post" class="formulario3">
             <div class="mb-3 w-100">
-                <!-- <input type="number" name="id2" value="<?=$id?>" hidden> -->
                 <input type="number" name="id" value="0" hidden>
                 <label for="name" class="form-label"><b>Nombre y apellidos:</b></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Nombre y apellidos..." required>
