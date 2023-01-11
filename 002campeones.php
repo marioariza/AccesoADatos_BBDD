@@ -43,7 +43,6 @@ if ($listaChamp) {
                 </div>
             </div>
         </div>";
-
     }
 }
 ?>

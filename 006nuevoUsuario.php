@@ -17,12 +17,32 @@
 
     try {
         $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    } 
+
+    try {
     
-        $id = $_POST['id'];
+        $id = $_POST['id2'];
         $name = $_POST['name'];
         $user = $_POST['username'];
         $pass = $_POST['password'];
         $email = $_POST['mail'];
+
+        $datos = "SELECT * FROM `user`";
+        $query = $conexion->prepare($datos);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $query->execute();
+
+        $results = $query->fetchAll();
+
+        foreach ($results as $dato) {
+            if ($dato["username"] == $user) {
+                header("Location: 005registro.php?error=user");
+            } else if ($dato["email"] == $email) {
+                header("Location: 005registro.php?error=email");
+            }
+        }
 
         $sql = "INSERT INTO `user` VALUES (:id, :nombre, :usuario, :contrasenia, :email)";
 
@@ -34,8 +54,6 @@
             "contrasenia" => password_hash($pass, PASSWORD_BCRYPT),
             "email" => $email
         ]);
-
-        $sql2 = "SELECT username, `password` FROM `user` WHERE id = $id";
 
     } catch (PDOException $e) {
         echo $e->getMessage();

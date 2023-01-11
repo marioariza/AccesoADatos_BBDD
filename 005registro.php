@@ -11,6 +11,42 @@
 </head>
 <body>
 
+    <?php
+
+    $error = $_GET["error"];
+
+    if ($error == "user") {
+        echo "<div class='modal' tabindex='-1'>
+        <div class='modal-dialog'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>ERROR</h5>
+              <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <div class='modal-body'>
+              <p>¡Este nombre de usuario ya esta en uso!</p>
+            </div>
+          </div>
+        </div>
+      </div>";
+    } else if ($error == "email") {
+        echo "<div class='modal' tabindex='-1'>
+        <div class='modal-dialog'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>ERROR</h5>
+              <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <div class='modal-body'>
+              <p>¡Este nombre de usuario ya esta en uso!</p>
+            </div>
+          </div>
+        </div>
+      </div>";
+    }
+
+    ?>
+
     <h1 class="titulo005 text-center m-3">Bienvenido al formulario de registro de jugadores de League of Legends.</h1>
     <br>
 

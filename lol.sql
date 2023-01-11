@@ -19,7 +19,7 @@ INSERT INTO champ VALUES(0,'Ivern','Support','Moderada','Ivern Bósquez, conocid
 CREATE TABLE `user` (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 `name` VARCHAR(100) NOT NULL,
-username VARCHAR(15) NOT NULL,
+username VARCHAR(15) NOT NULL UNIQUE,
 `password` TEXT NOT NULL,
-email VARCHAR(30) NOT NULL
+email VARCHAR(30) NOT NULL UNIQUE
 );
