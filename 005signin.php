@@ -21,16 +21,13 @@
 
     ?>
 
-    <h1 class="titulo005 text-center m-3">Bienvenido al registro de jugadores de League of Legends.</h1>
+    <h1 class="titulo005 text-center m-3">Bienvenido al inicio de sesión de jugadores de League of Legends.</h1>
     <br>
 
     <div class="formulario d-flex justify-content-center">
         <form action="006nuevoUsuario.php" method="post" class="formulario3">
             <div class="mb-3 w-100">
                 <input type="number" name="id" value="0" hidden>
-                <label for="name" class="form-label"><b>Nombre y apellidos:</b></label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Nombre y apellidos..." required>
-                <br>
                 <label for="username" class="form-label"><b>Nombre de usuario:</b></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="Nombre de usuario..." minlength="5" maxlength="15" required>
                 <p>El nombre de usuario debe tener al menos 5 carácteres y un máximo de 15 carácteres.</p>
@@ -43,17 +40,15 @@
                     </svg>
                 </a>
                 <p>La contraseña debe tener al menos 5 carácteres y un máximo de 15 carácteres.</p>
-                <label for="mail" class="form-label"><b>Email:</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="Email..." size="30" required>
             </div>
             <div class="mb-3 w-100 d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
             </div>
         </form>
     </div>
     <br><br>
     <div class="m-3">
-        <p>¿Ya tienes una cuenta? Inicia sesión en <a href="005signin.php" class="btn btn-primary">Inicio sesión</a></p>
+        <p>¿No tienes una cuenta? Registrate en <a href="005registro.php" class="btn btn-primary">Registro</a></p>
     </div>
 </body>
 </html>
