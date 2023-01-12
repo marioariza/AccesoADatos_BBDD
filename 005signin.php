@@ -27,7 +27,7 @@
     <div class="formulario d-flex justify-content-center">
         <form action="006comprobarUsuario.php" method="post" class="formulario3">
             <div class="mb-3 w-100">
-                <input type="number" name="id" value="0" hidden>
+                <!-- <input type="number" name="id" value="0" hidden> -->
                 <label for="username" class="form-label"><b>Nombre de usuario:</b></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="Nombre de usuario..." minlength="5" maxlength="15" required>
                 <p>El nombre de usuario debe tener al menos 5 carácteres y un máximo de 15 carácteres.</p>

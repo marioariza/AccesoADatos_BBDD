@@ -18,11 +18,9 @@
     try {
         $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
     
-        $id = $_POST['id'];
-        $name = $_POST['name'];
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $email = $_POST['mail'];
+
 
         $datos = "SELECT * FROM `user`";
         $query = $conexion->prepare($datos);
@@ -50,7 +48,7 @@
             "email" => $email
         ]);
 
-        echo "<h1>Bienvenido $name. Tu nombre de usuario es $user y tu contraseña es $pass.</h1>";
+        // echo "<h1>Bienvenido $name. Tu nombre de usuario es $user y tu contraseña es $pass.</h1>";
 
     } catch (PDOException $e) {
         echo $e->getMessage();
