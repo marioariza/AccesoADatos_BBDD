@@ -23,7 +23,7 @@
         $usernow = $_GET['usernow'] ?? "";
 
         if ($borrar == "si") {
-            $datos = "DELETE FROM `user` WHERE username = $usernow";
+            $datos = "DELETE FROM `user` WHERE username = '$usernow'";
             $query = $conexion->prepare($datos);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();

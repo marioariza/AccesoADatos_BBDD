@@ -23,5 +23,3 @@ username VARCHAR(15) NOT NULL UNIQUE,
 `password` TEXT NOT NULL,
 email VARCHAR(30) NOT NULL UNIQUE
 );
-
-SELECT COUNT(id) FROM `user`;

@@ -38,7 +38,6 @@
                 header("Location: 005registro.php?error=email");
             }
         }
-
         
         $sql = "INSERT INTO `user` VALUES (:id, :nombre, :usuario, :contrasenia, :email)";
 
@@ -50,8 +49,6 @@
             "contrasenia" => password_hash($pass, PASSWORD_BCRYPT),
             "email" => $email
         ]);
-        
-
 
         echo "<h3 class='m-4'>Bienvenido $name</h3> 
         <b class='m-4'>-----------------------------------------------------------------------</b>
