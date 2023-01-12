@@ -13,6 +13,43 @@
 
     <?php
 
+    try {
+        $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
+
+        $datos = "SELECT COUNT(id) FROM `user`";
+        $query = $conexion->prepare($datos);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $query->execute();
+
+        $results = $query->fetchColumn();
+
+        if ($results == 0) {
+            // Si no hay ningún usuario en la base de dato meto 3 usuarios.
+
+            $name_3user = ['Mario Rufo Ariza', 'Manuel Moya Vadillo', 'Guillermo Neuman Vera'];
+            $user_3user = ['marioariza', 'ermoyazo', 'neumanv'];
+            $pass_3user = ['mario2003', 'manuel2003', 'neuman2003'];
+            $email_3user = ['marioariza@gmail.com', 'manuelmoya@gmail.com', 'neumanv@gmail.com'];
+
+            $sql = "INSERT INTO `user` VALUES (:id, :nombre, :usuario, :contrasenia, :email)";
+
+            $sentencia = $conexion->prepare($sql);
+
+            for ($i = 0; $i < 3; $i++) {
+                $finish = $sentencia -> execute( [
+                    "id" => 0,
+                    "nombre" => $name_3user[$i],
+                    "usuario" => $user_3user[$i],
+                    "contrasenia" => password_hash($pass_3user[$i], PASSWORD_BCRYPT),
+                    "email" => $email_3user[$i]
+                ]);
+            }
+        }
+
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
     $error = $_GET["error"] ?? "";
 
     if ($error == "user" || $error == "email") {
@@ -47,7 +84,7 @@
         </form>
     </div>
     <br><br>
-    <div class="m-3">
+    <div class="m-3 d-flex justify-content-center">
         <p>¿No tienes una cuenta? Registrate en <a href="005registro.php" class="btn btn-primary">Registro</a></p>
     </div>
 </body>

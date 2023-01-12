@@ -17,7 +17,7 @@
 
     try {
         $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
-    
+
         $id = $_POST['id'];
         $name = $_POST['name'];
         $user = $_POST['username'];
@@ -39,6 +39,7 @@
             }
         }
 
+        
         $sql = "INSERT INTO `user` VALUES (:id, :nombre, :usuario, :contrasenia, :email)";
 
         $sentencia = $conexion->prepare($sql);
@@ -49,6 +50,8 @@
             "contrasenia" => password_hash($pass, PASSWORD_BCRYPT),
             "email" => $email
         ]);
+        
+
 
         echo "<h3 class='m-4'>Bienvenido $name</h3> 
         <b class='m-4'>-----------------------------------------------------------------------</b>
@@ -57,7 +60,45 @@
         <h5 class='m-4'>Tu contraseña es: </h5><h6 class='m-4'>$pass</h6>
         <br>
         <div class='m-4'>
-            <img src='img/registro.jpeg' alt='Imagen'>
+            <a class='btn btn-primary boton' data-bs-toggle='modal' data-bs-target='#exampleModal'>Cerrar sesión</a><br><br>
+        
+            <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h1 class='modal-title fs-5' id='exampleModalLabel'>Cerrar sesión</h1>
+                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </div>
+                        <div class='modal-body'>
+                            <p>¿Estás seguro de que quieres cerrar sesión en tu cuenta?</p>
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                            <a type='button' class='btn btn-primary' href='005registro.php'>Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class='btn btn-primary boton' data-bs-toggle='modal' data-bs-target='#exampleModal2'>Borrar cuenta</a><br><br>
+        
+            <div class='modal fade' id='exampleModal2' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h1 class='modal-title fs-5' id='exampleModalLabel'>Borrar usuario</h1>
+                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </div>
+                        <div class='modal-body'>
+                            <p>¿Estás seguro de que quieres eliminar tu cuenta?</p>
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                            <a type='button' class='btn btn-primary' href='005registro.php?borrar=si&usernow=$user'>Borrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>";
 
     } catch (PDOException $e) {
