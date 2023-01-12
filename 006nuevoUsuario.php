@@ -50,7 +50,15 @@
             "email" => $email
         ]);
 
-        echo "<h1>Bienvenido $name. Tu nombre de usuario es $user y tu contraseña es $pass.</h1>";
+        echo "<h3 class='m-4'>Bienvenido $name</h3> 
+        <b class='m-4'>-----------------------------------------------------------------------</b>
+        <h5 class='m-4'>Tu nombre de usuario es: </h5><h6 class='m-4'>$user</h6>
+        <br>
+        <h5 class='m-4'>Tu contraseña es: </h5><h6 class='m-4'>$pass</h6>
+        <br>
+        <div class='m-4'>
+            <img src='img/registro.jpeg' alt='Imagen'>
+        </div>";
 
     } catch (PDOException $e) {
         echo $e->getMessage();
