@@ -16,6 +16,16 @@
     try {
         $conexion = new PDO('mysql:host=localhost; dbname=lol', 'root', '');
 
+        $borrar = $_GET['borrar'] ?? "";
+        $usernow = $_GET['usernow'] ?? "";
+
+        if ($borrar == "si") {
+            $datos = "DELETE FROM `user` WHERE username = '$usernow'";
+            $query = $conexion->prepare($datos);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+
         $datos = "SELECT COUNT(id) FROM `user`";
         $query = $conexion->prepare($datos);
         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -52,8 +62,10 @@
 
     $error = $_GET["error"] ?? "";
 
-    if ($error == "user" || $error == "email") {
-        echo '<div class="alert alert-danger" role="alert">¡Este ' . $error . ' ya esta en uso! Cambialo y vuelve a intentarlo.</div>';
+    if ($error == "user") {
+        echo '<div class="alert alert-danger" role="alert">¡Este ' . $error . ' no existe! Registrate y entra en tu cuenta.</div>';
+    } else if ($error == "pass") {
+        echo '<div class="alert alert-danger" role="alert">Contraseña incorrecta, vuelva a intentarlo.</div>';
     }
 
     ?>
