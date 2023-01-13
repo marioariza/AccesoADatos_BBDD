@@ -29,7 +29,7 @@
 
     ?>
     
-    <form action="003editando.php" method="post" class="formulario3">
+    <form action="003editando.php" method="post" class="formulario3 m-4">
         <div class="mb-3 w-25">
             <input type="number" name="id" value="<?=$id?>" hidden>
             <label for="champ" class="form-label"><b>Campeón:</b></label>
