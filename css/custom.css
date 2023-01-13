@@ -10,12 +10,12 @@
 #boton_contraseña:hover {
     background-color: rgb(88, 88, 255);
     color: white;
-    transition: .5s ease-in;
+    transition: 0.35s ease-in;
 }
 
 #boton_contraseña:not(:hover) {
     background-color: transparent;
     color: black;
-    transition: .5s ease-in;
+    transition: 0.35s ease-in;
 }
 
