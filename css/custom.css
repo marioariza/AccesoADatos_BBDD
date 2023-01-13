@@ -1,0 +1,21 @@
+#boton_contraseña {
+    position: relative;
+    left: 38.2em;
+    top: -2.07em;
+    padding: 0.7% 1.55% 1.6% 1.6%;
+    border:  .1em solid rgba(128, 128, 128, 0.397);
+    border-radius: 4px;
+}
+
+#boton_contraseña:hover {
+    background-color: rgb(88, 88, 255);
+    color: white;
+    transition: .5s ease-in;
+}
+
+#boton_contraseña:not(:hover) {
+    background-color: transparent;
+    color: black;
+    transition: .5s ease-in;
+}
+
