@@ -1,9 +1,9 @@
 #boton_contraseña {
     position: relative;
     left: 38.2em;
-    top: -2.07em;
+    top: -2.08em;
     padding: 0.7% 1.55% 1.6% 1.6%;
-    border:  .1em solid rgba(128, 128, 128, 0.397);
+    border:  0.05em solid rgba(128, 128, 128, 0.397);
     border-radius: 4px;
 }
 
