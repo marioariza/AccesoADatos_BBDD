@@ -22,7 +22,7 @@ $listaChamp = mysqli_query($conexion, $consulta);
 
 if ($listaChamp) {
     foreach($listaChamp as $champs) {
-        echo "<b>Campeón $champs[id] = </b><b>Name: </b> $champs[name] - <b>Rol: </b> $champs[rol] - <b>Difficulty: </b> $champs[difficulty] <br><br>";
+        echo "<br><b class='m-4'>Campeón $champs[id] = </b><b>Name: </b> $champs[name] - <b>Rol: </b> $champs[rol] - <b>Difficulty: </b> $champs[difficulty] <br><br>";
     }
 }
 

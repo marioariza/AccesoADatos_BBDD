@@ -23,7 +23,7 @@ $listaChamp = mysqli_query($conexion, $consulta);
 
 if ($listaChamp) {
     foreach($listaChamp as $champs) {
-        echo "<b>Campeón $champs[id] = </b><b>Name: </b> $champs[name] - <b>Rol: </b> $champs[rol] - <b>Difficulty: </b> $champs[difficulty] <b>|||  OPCIONES ----></b><a class='btn btn-danger boton' href='003editando-form.php?id=$champs[id]'>EDITAR</a>
+        echo "<br><b class='m-4'>Campeón $champs[id] = </b><b>Name: </b> $champs[name] - <b>Rol: </b> $champs[rol] - <b>Difficulty: </b> $champs[difficulty] <b>|||  OPCIONES ----></b><a class='btn btn-danger boton' href='003editando-form.php?id=$champs[id]'>EDITAR</a>
         <a class='btn btn-primary boton' data-bs-toggle='modal' data-bs-target='#exampleModal$champs[id]'>BORRAR</a><br><br>
         
         <div class='modal fade' id='exampleModal$champs[id]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>

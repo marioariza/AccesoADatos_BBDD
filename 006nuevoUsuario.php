@@ -52,10 +52,15 @@
 
         echo "<h3 class='m-4'>Bienvenido $name</h3> 
         <b class='m-4'>-----------------------------------------------------------------------</b>
-        <h5 class='m-4'>Tu nombre de usuario es: </h5><h6 class='m-4'>$user</h6>
-        <br>
-        <h5 class='m-4'>Tu contraseña es: </h5><h6 class='m-4'>$pass</h6>
-        <br>
+            <br>
+            <div class='m-4'>
+                <a type='button' class='btn btn-primary' href='003campeones.php'>Lista campeones LoL</a>
+                <a type='button' class='btn btn-primary' href='002campeones.php'>Editar campeones LoL</a>
+            </div>
+            <h5 class='m-4'>Tu nombre de usuario es: </h5><h6 class='m-4'>$user</h6>
+            <br>
+            <h5 class='m-4'>Tu contraseña es: </h5><h6 class='m-4'>$pass</h6>
+            <b class='m-4'>-----------------------------------------------------------------------</b>
         <div class='m-4'>
             <a class='btn btn-primary boton' data-bs-toggle='modal' data-bs-target='#exampleModal'>Cerrar sesión</a><br><br>
         
